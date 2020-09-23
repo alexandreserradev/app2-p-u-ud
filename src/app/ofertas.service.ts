@@ -13,4 +13,10 @@ export class OfertasService {
       .toPromise();
     return resposta;
   }
+
+  async getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
+    const resposta = await this.http.get<Oferta[]>(`http://localhost:3000/ofertas?categoria=${categoria}`)
+      .toPromise();
+    return resposta;
+  }
 }
