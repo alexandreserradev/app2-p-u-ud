@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { URL_API } from './app.api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -50,5 +51,9 @@ export class OfertasService {
       });
 
     return resposta;
+  }
+
+  pesquisaOfertas(termo: string): Observable<Oferta[]> {
+    return this.http.get<Oferta[]>(`${URL_API}/ofertas?descricao_oferta=${termo}`);
   }
 }
