@@ -1,4 +1,4 @@
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 import { Oferta } from './../shared/oferta.model';
 import { OfertasService } from './../ofertas.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +13,6 @@ import { switchMap, debounceTime, distinctUntilChanged, catchError } from 'rxjs/
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>;
-  public ofertas2: Oferta[];
   private subjectPesquisa = new Subject<string>();
 
   constructor(private ofertasService: OfertasService) { }
@@ -26,9 +25,9 @@ export class TopoComponent implements OnInit {
         switchMap((termoDaBusca: string) => {
           console.log('Req. HTTP');
 
-          // if (termoDaBusca.trim() === '') {
-          //   return new Observable<Oferta[]>();
-          // }
+          if (termoDaBusca.trim() === '') {
+            return of<Oferta[]>([]);
+          }
 
           return this.ofertasService.pesquisaOfertas(termoDaBusca);
         }),
@@ -38,12 +37,6 @@ export class TopoComponent implements OnInit {
         })
 
       );
-
-    this.ofertas.subscribe((ofertas: Oferta[]) => {
-      console.log(this.ofertas2);
-
-      this.ofertas2 = ofertas;
-    });
   }
 
   pesquisa(termoDaPesquisa: string): void {
@@ -57,6 +50,10 @@ export class TopoComponent implements OnInit {
     //   (erro: any) => console.log(erro),
     //   () => console.log('Fluxo de eventos completo.')
     // );
+  }
+
+  limpaPesquisa(): void {
+    this.subjectPesquisa.next('');
   }
 
 }
