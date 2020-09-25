@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         this.ofertas = ofertas;
       })
       .catch(erro => {
-        console.log(erro);
+        // console.log(erro);
       });
   }
 

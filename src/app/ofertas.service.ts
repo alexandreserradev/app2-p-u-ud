@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { URL_API } from './app.api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { retry } from 'rxjs/operators';
 
 import { Oferta } from './shared/oferta.model';
 
@@ -54,6 +55,9 @@ export class OfertasService {
   }
 
   pesquisaOfertas(termo: string): Observable<Oferta[]> {
-    return this.http.get<Oferta[]>(`${URL_API}/ofertas?descricao_oferta=${termo}`);
+    return this.http.get<Oferta[]>(`${URL_API}/ofertas?descricao_oferta_like=${termo}`)
+      .pipe(
+        retry(10)
+      );
   }
 }
