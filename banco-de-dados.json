@@ -192,6 +192,27 @@
       "complemento": "asdasd",
       "formaPagamento": "dinheiro",
       "id": 1
+    },
+    {
+      "endereco": "dddddd",
+      "numero": "333",
+      "complemento": "dsafsdfsdf",
+      "formaPagamento": "debito",
+      "id": 2
+    },
+    {
+      "endereco": "asdasdasd",
+      "numero": "222",
+      "complemento": "sadasdasd",
+      "formaPagamento": "debito",
+      "id": 3
+    },
+    {
+      "endereco": "asdasd",
+      "numero": "213",
+      "complemento": "asdasdasd",
+      "formaPagamento": "dinheiro",
+      "id": 4
     }
   ]
 }

@@ -10,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdemCompraComponent implements OnInit {
 
+  idPedidoCompra: number;
+
+  // Pedido
   pedido: Pedido = new Pedido('', '', '', '');
   endereco = '';
   numero = '';
@@ -106,7 +109,10 @@ export class OrdemCompraComponent implements OnInit {
     this.pedido.formaPagamento = this.formaPagamento;
 
     this.ordemCompraService.efetivarCompra(this.pedido)
-      .subscribe();
+      .subscribe((pedido: Pedido) => {
+        this.idPedidoCompra = pedido.id;
+        console.log(this.idPedidoCompra);
+      });
   }
 
 }
