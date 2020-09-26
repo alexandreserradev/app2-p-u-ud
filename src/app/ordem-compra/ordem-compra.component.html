@@ -160,7 +160,14 @@
       </div>
 
       <hr />
-      <button type="submit" class="btn btn-primary btn-lg" [disabled]="formEstado">Cofirmar compra</button>
+      <button
+        type="button"
+        class="btn btn-primary btn-lg"
+        [disabled]="formEstado"
+        (click)="confirmarCompra()"
+      >
+        Cofirmar compra
+      </button>
     </form>
   </div>
 </div>
