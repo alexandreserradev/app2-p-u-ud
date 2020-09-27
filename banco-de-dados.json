@@ -187,32 +187,18 @@
   ],
   "pedidos": [
     {
-      "endereco": "ssss",
-      "numero": "22",
-      "complemento": "asdasd",
-      "formaPagamento": "dinheiro",
+      "endereco": "Rua xpto",
+      "numero": "11",
+      "complemento": "foobar",
+      "formaPagamento": "debito",
       "id": 1
     },
     {
-      "endereco": "dddddd",
-      "numero": "333",
-      "complemento": "dsafsdfsdf",
+      "endereco": "Rua foo",
+      "numero": "11",
+      "complemento": "bar",
       "formaPagamento": "debito",
       "id": 2
-    },
-    {
-      "endereco": "asdasdasd",
-      "numero": "222",
-      "complemento": "sadasdasd",
-      "formaPagamento": "debito",
-      "id": 3
-    },
-    {
-      "endereco": "asdasd",
-      "numero": "213",
-      "complemento": "asdasdasd",
-      "formaPagamento": "dinheiro",
-      "id": 4
     }
   ]
 }
