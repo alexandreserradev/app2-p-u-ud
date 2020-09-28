@@ -199,6 +199,27 @@
       "complemento": "bar",
       "formaPagamento": "debito",
       "id": 2
+    },
+    {
+      "endereco": "Rua reactive forms",
+      "numero": "21",
+      "complemento": "asdasd",
+      "formaPagamento": "asdasd",
+      "id": "dinheiro"
+    },
+    {
+      "endereco": "Rua teste1111",
+      "numero": "22",
+      "complemento": "sadsad",
+      "formaPagamento": "sadsad",
+      "id": "debito"
+    },
+    {
+      "endereco": "sdasdasd",
+      "numero": "12",
+      "complemento": "sdad",
+      "formaPagamento": "dinheiro",
+      "id": 3
     }
   ]
 }
