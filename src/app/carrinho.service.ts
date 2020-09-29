@@ -47,4 +47,16 @@ export class CarrinhoService {
       itemCarrinhoEncontrado.quantidade += 1;
     }
   }
+
+  diminuirQuantidade(itemCarrinho: ItemCarrinho): void {
+    const itemCarrinhoEncontrado = this.itens.find((item: ItemCarrinho) => item.id === itemCarrinho.id);
+
+    if (itemCarrinho) {
+      itemCarrinhoEncontrado.quantidade -= 1;
+
+      if (itemCarrinhoEncontrado.quantidade === 0) {
+        this.itens.splice(this.itens.indexOf(itemCarrinhoEncontrado), 1);
+      }
+    }
+  }
 }
