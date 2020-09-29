@@ -18,10 +18,33 @@ export class CarrinhoService {
       1
     );
 
+    // Verificar se o item já existe na lista
+    const itemCarrinhoEncontrado = this.itens.find((item: ItemCarrinho) => item.id === itemCarrinho.id);
 
-    console.log('IncluirItem() ', itemCarrinho);
+    if (itemCarrinhoEncontrado) {
+      itemCarrinhoEncontrado.quantidade += 1;
+    } else {
+      this.itens.push(itemCarrinho);
+    }
 
   }
-}
 
-// export default CarrinhoService;
+  totalCarrinhoCompras(): number {
+    let total = 0;
+
+    this.itens.map((item: ItemCarrinho) => {
+      total = total + (item.valor * item.quantidade);
+    });
+
+    return total;
+  }
+
+  adicionarQuantidade(itemCarrinho: ItemCarrinho): void {
+    console.log(itemCarrinho);
+    const itemCarrinhoEncontrado = this.itens.find((item: ItemCarrinho) => item.id === itemCarrinho.id);
+
+    if (itemCarrinho) {
+      itemCarrinhoEncontrado.quantidade += 1;
+    }
+  }
+}
